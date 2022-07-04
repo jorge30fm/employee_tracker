@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./db/connection');
+const mysql = require('mysql2')
 const apiRoutes = require('./routes/apiRoutes');
 
 const PORT= process.env.PORT || 3001;

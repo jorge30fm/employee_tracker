@@ -5,9 +5,9 @@ const db = mysql.createConnection(
                 host: 'localhost',
                 user: 'root',
                 password: 'jorgeWebDeveloper12484820!?',
-                database: 'business'
+                database: 'business_data'
         },
-        console.log('Connected to the business database')
+        console.log('Connected to the business_data database')
 );
 
 module.exports = db;
