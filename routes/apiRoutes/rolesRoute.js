@@ -6,6 +6,7 @@ const db = require('../../db/connection');
 router.get('/roles', (req, res) => {
         const sql = `
         SELECT
+                roles.id,
                 roles.title,
                 roles.salary,
                 departments.department_name AS department
@@ -21,7 +22,7 @@ router.get('/roles', (req, res) => {
                 }
                 res.json({
                         message: 'success',
-                        data: rows
+                        ROLES: rows
                 });
         });
 });
@@ -42,7 +43,7 @@ router.post('/roles', ({ body }, res) => {
                 }
                 res.json({
                         message: 'success',
-                        data: body
+                        Role: body
                 });
         });
 });
