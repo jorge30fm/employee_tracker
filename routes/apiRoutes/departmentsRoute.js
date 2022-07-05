@@ -35,7 +35,7 @@ router.post('/departments', ({body}, res) => {
                 }
                 res.json({
                         message: 'success',
-                        newDepartment: body
+                        department: body
                 });
         });
 });

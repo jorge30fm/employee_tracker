@@ -11,7 +11,7 @@ router.get('/roles', (req, res) => {
                 roles.salary,
                 departments.department_name AS department
         FROM roles
-        RIGHT JOIN departments
+        LEFT JOIN departments
         ON roles.department_id = departments.id;
         `
 
