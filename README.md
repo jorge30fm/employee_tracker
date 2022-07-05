@@ -81,5 +81,5 @@
         - >>>> update employee manager
         - >>>> view employees by manager
         - >>>> delete employees by department
-        - delete departments, roles, and eployees
+        - delete departments, roles, and employees
         - view total utilized budget of a department (all salaries of employees) -->
