@@ -1,5 +1,6 @@
-const express = require('express');
 const db = require('./db/connection');
+const express = require('express')
+// const fetch = require('node-fetch');
 const mysql = require('mysql2')
 const apiRoutes = require('./routes/apiRoutes');
 const Departments = require('./lib/departments');
@@ -28,4 +29,14 @@ db.connect(err => {
         });
 });
 
-Departments.getDepartments();
+// function getDepartments() {
+//         const  appURL = 'https://fathomless-oasis-68627.herokuapp.com'
+
+//         fetch(appURL + '/api/departments', {
+//                 method: 'GET',
+//                 headers: {
+//                         'Content-Type': 'application/json',
+//                 },
+//         }) .then(response => {console.log(response)});
+//     }
+// getDepartments();
