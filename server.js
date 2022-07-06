@@ -1,10 +1,11 @@
-const db = require('./db/connection');
-const express = require('express')
-// const fetch = require('node-fetch');
-const mysql = require('mysql2')
-const apiRoutes = require('./routes/apiRoutes');
-const Departments = require('./lib/departments');
 
+const express = require('express')
+const mysql = require('mysql2')
+const {getDepartments,
+        addDepartment,
+        deleteDepartment,
+        getBudget} = require('./lib/departments');
+const db = require('./db/connection');
 const PORT= process.env.PORT || 3001;
 const app = express();
 
@@ -13,7 +14,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //use apir routes
-app.use('/api', apiRoutes);
 
 //default response for not found requests
 app.use((req, res) => {
@@ -29,14 +29,5 @@ db.connect(err => {
         });
 });
 
-// function getDepartments() {
-//         const  appURL = 'https://fathomless-oasis-68627.herokuapp.com'
 
-//         fetch(appURL + '/api/departments', {
-//                 method: 'GET',
-//                 headers: {
-//                         'Content-Type': 'application/json',
-//                 },
-//         }) .then(response => {console.log(response)});
-//     }
-// getDepartments();
+
