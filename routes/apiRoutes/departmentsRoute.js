@@ -63,5 +63,30 @@ router.delete('/department/:id', (req, res) => {
                 }
         });
 });
-
+//GET total department budget
+router.get('/department/budget/:id', (req, res) => {
+        const sql = `
+        SELECT SUM( roles.salary) AS total_budget
+        FROM employees
+        LEFT JOIN roles
+        ON employees.role_id = roles.id
+        WHERE roles.department_id = ?;
+                `;
+        const params =[req.params.id];
+        db.query(sql, params, (err, rows) => {
+                if (err) {
+                        res.status(500).json({ error: res.message});
+                        return;
+                 } else if (!rows[0].total_budget) {
+                        res.json({
+                                message:'Department not found'
+                        });
+                        return;
+                }
+                res.json({
+                        message: 'success',
+                        BUDGET: rows
+                });
+        });
+});
 module.exports = router;
