@@ -1,15 +1,11 @@
 
 const express = require('express');
 const db = require('./db/connection')
-const {getDepartments,
-        addDepartment,
-        deleteDepartment,
-        getBudget} = require('./lib/departments');
-const { getEmployees } = require('./lib/employees');
+
 const PORT= process.env.PORT || 3001;
 const app = express();
-const{menu, inputDepName} = require('./lib/index');
-const { getRoles } = require('./lib/roles');
+const {initializeApp} = require('./lib/index');
+
 
 //set up express middleware
 app.use(express.urlencoded({ extended: false }));
@@ -31,3 +27,4 @@ db.connect(err => {
         });
 })
 
+initializeApp();
