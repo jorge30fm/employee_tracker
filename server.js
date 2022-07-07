@@ -4,7 +4,6 @@ const db = require('./db/connection')
 
 const PORT= process.env.PORT || 3001;
 const app = express();
-const {initializeApp} = require('./lib/index');
 
 
 //set up express middleware
@@ -26,5 +25,3 @@ db.connect(err => {
                 console.log(`Server running on port ${PORT}`);
         });
 })
-
-initializeApp();
