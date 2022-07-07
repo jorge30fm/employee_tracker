@@ -21,7 +21,7 @@ To install this application, fork it from the github repository. Clone the start
 
 ## Usage
 
-To deploy the application open its directory from the command line. Input 'node server.js' to start the application. User will be prompted with different options to either view or edit employees, roles, or departments. Navigate through the prompts to find the action that you want to do. Once finished, select 'Exit Application' to quit.
+To deploy the application open its directory from the command line. Input 'node lib/index.js' to start the application. User will be prompted with different options to either view or edit employees, roles, or departments. Navigate through the prompts to find the action that you want to do. Once finished, select 'Exit Application' to quit.
 
 Video Demo: <https://watch.screencastify.com/v/lM39yecRLVZl03xkFIVo>
 
